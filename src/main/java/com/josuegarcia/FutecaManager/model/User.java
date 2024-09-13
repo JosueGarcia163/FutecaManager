@@ -1,6 +1,5 @@
-package com.josuegarcia.FutecaManager.model;
+package com.josuegarcia.futecaManager.model;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,19 +12,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Entity//Mapear entidad / Mapea desde hibernate el modelo
-@NoArgsConstructor
+@Entity //Es una entidad / Mapea desde Hibernate el modelo
 @AllArgsConstructor
+@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    // Que no venga nulo, para tipo String
     @NotBlank
     private String name;
     @NotBlank
     private String surname;
-    @NotBlank   
+    @NotBlank
     @Column(unique = true)
     private String username;
     @Email
@@ -34,7 +32,5 @@ public class User {
     private String email;
     @NotBlank
     private String password;
-
-    //No es obligatoria
     private String profilePicture;
 }

@@ -1,43 +1,43 @@
-package com.josuegarcia.FutecaManager.model;
+package com.josuegarcia.futecaManager.model;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
-import com.josuegarcia.FutecaManager.utils.Status;
+import com.josuegarcia.futecaManager.utils.Status;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.FutureOrPresent;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
+@Data //Crear un constructor vacío
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Reservation {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
+    @NotNull //@NotBlank es solo para STRINGS!!!
     @FutureOrPresent
-    private Date start; // UTC tiempo universal central. -> GMT-6 gracias a nuestras propiedades
-    @NotBlank
+    private Timestamp start; //UTC -> GMT-6
+    @NotNull
     @FutureOrPresent
-    private Date end;
-    //Se almacena comprobante de pago
+    private Timestamp end;
     private String payment;
     @Enumerated(EnumType.STRING)
     private Status status;
-    @NotBlank
-    @ManyToOne // por defecto tiene un Eager osea una poblacion de datos(fetch = FetchType.EAGER)
+    @NotNull
+    @ManyToOne //Por defecto tiene un Eager (población de datos)
     private User user;
-    @NotBlank
+    @NotNull
     @ManyToOne
     private SoccerField soccerField;
-
 }

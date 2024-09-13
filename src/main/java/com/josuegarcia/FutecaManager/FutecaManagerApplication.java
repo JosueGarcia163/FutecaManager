@@ -1,4 +1,4 @@
-package com.josuegarcia.FutecaManager;
+package com.josuegarcia.futecaManager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

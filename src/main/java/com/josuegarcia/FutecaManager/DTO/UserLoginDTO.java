@@ -1,15 +1,13 @@
-package com.josuegarcia.FutecaManager.DTO;
+package com.josuegarcia.futecaManager.DTO;
 
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-
 public class UserLoginDTO {
-
-    @NotBlank(message = "El usuario no puede ir vacio")
+    @NotBlank(message = "El nombre de usuario es obligatorio")
     private String username;
-    @NotBlank(message = "La contraseña no puede ir vacio")
+
+    @NotBlank(message = "La password no puede ir vacía")
     private String password;
 }

@@ -1,4 +1,4 @@
-package com.josuegarcia.FutecaManager.utils;
+package com.josuegarcia.futecaManager.utils;
 
 public enum Status {
     PROCESS,

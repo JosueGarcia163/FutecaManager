@@ -8,11 +8,11 @@
 		<version>3.3.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.josuegarcia</groupId>
-	<artifactId>FutecaManager</artifactId>
+	<groupId>com.josuenoj</groupId>
+	<artifactId>futecaManager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>FutecaManager</name>
-	<description>Api para la reserva de canchas</description>
+	<name>futecaManager</name>
+	<description>API para la reserva de canchas de la empresa Futeca</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -59,25 +59,21 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
-            <groupId>at.favre.lib</groupId>
-            <artifactId>bcrypt</artifactId>
-            <version>0.10.2</version>
-        </dependency>
-
+			<groupId>at.favre.lib</groupId>
+			<artifactId>bcrypt</artifactId>
+			<version>0.10.2</version>
+		</dependency>
 		<dependency>
-            <groupId>com.cloudinary</groupId>
-            <artifactId>cloudinary-http44</artifactId>
-            <version>1.33.0</version>
-        </dependency>
-		
+			<groupId>com.cloudinary</groupId>
+			<artifactId>cloudinary-http44</artifactId>
+			<version>1.33.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
