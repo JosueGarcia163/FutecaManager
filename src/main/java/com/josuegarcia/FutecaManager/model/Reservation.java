@@ -38,6 +38,6 @@ public class Reservation {
     @ManyToOne //Por defecto tiene un Eager (población de datos)
     private User user;
     @NotNull
-    @ManyToOne
+    @ManyToOne// Muchas reservaciones para un soccerField
     private SoccerField soccerField;
 }

@@ -30,13 +30,14 @@ public class ReservationService implements IReservationService {
 
     @Override
     public List<ReservationResponseDTO> myReservations(Long userId) {
-        //Mandamos a buscar a los usuarios que tengan el id usuario en especifico.
+        //Mandamos a buscar a los usuarios que tengan el id usuario en especifico y lo guardamos en user para utilizarlo despues.
         User user = userService.getUser(userId);
+        // guarda en reservations los atributos de reservacion que coincidan con el numero de usuario.
         List<Reservation> reservations = reservationRepository.findByUser(user);
         //Llamamos las reservaciones con los filtros para que liste lo necesario.(responseDTO)
         return reservations
                 .stream()
-                .map(reservation -> responseDTO(reservation))
+                .map(reservation -> responseDTO(reservation))//mapea reservation con responseDTO.
                 .collect(Collectors.toList());
     }
 
@@ -75,7 +76,8 @@ public class ReservationService implements IReservationService {
     }
 
     
-    /*Metodo que sirve para listar solamente los datos de las reservas y los datos especificos del usuario.
+    /*Metodo que sirve para listar solamente los datos de las reservas y los datos especificos del usuario(sin mostar credenciales 
+    importantes).
     para que se mande a llamar en la funcion de listar. */
     private ReservationResponseDTO responseDTO(Reservation reservation) {
         User user = reservation.getUser();
